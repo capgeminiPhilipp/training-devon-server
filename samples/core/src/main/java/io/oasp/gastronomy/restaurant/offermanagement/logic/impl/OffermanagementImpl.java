@@ -44,6 +44,10 @@ import io.oasp.gastronomy.restaurant.offermanagement.logic.api.to.ProductFilter;
 import io.oasp.gastronomy.restaurant.offermanagement.logic.api.to.ProductSearchCriteriaTo;
 import io.oasp.gastronomy.restaurant.offermanagement.logic.api.to.ProductSortBy;
 import io.oasp.gastronomy.restaurant.offermanagement.logic.api.to.SideDishEto;
+import io.oasp.gastronomy.restaurant.offermanagement.logic.api.to.SpecialEto;
+import io.oasp.gastronomy.restaurant.offermanagement.logic.api.to.SpecialSearchCriteriaTo;
+import io.oasp.gastronomy.restaurant.offermanagement.logic.api.usecase.UcFindSpecial;
+import io.oasp.gastronomy.restaurant.offermanagement.logic.api.usecase.UcManageSpecial;
 import io.oasp.module.jpa.common.api.to.PaginatedListTo;
 
 /**
@@ -57,23 +61,38 @@ public class OffermanagementImpl extends AbstractComponentFacade implements Offe
 
   private static final Logger LOG = LoggerFactory.getLogger(OffermanagementImpl.class);
 
-  /** @see #getOfferDao() */
+  /**
+   * @see #getOfferDao()
+   */
   private OfferDao offerDao;
 
-  /** @see #setProductDao(ProductDao) */
+  /**
+   * @see #setProductDao(ProductDao)
+   */
   private ProductDao productDao;
 
-  /** @see #setMealDao(MealDao) */
+  /**
+   * @see #setMealDao(MealDao)
+   */
   private MealDao mealDao;
 
-  /** @see #setDrinkDao(DrinkDao) */
+  /**
+   * @see #setDrinkDao(DrinkDao)
+   */
   private DrinkDao drinkDao;
 
-  /** @see #setSideDishDao(SideDishDao) */
+  /**
+   * @see #setSideDishDao(SideDishDao)
+   */
   private SideDishDao sideDishDao;
 
-  /** **/
   private UcManageBinaryObject ucManageBinaryObject;
+
+  @Inject
+  private UcFindSpecial ucFindSpecial;
+
+  @Inject
+  private UcManageSpecial ucManageSpecial;
 
   /**
    * The constructor.
@@ -498,6 +517,34 @@ public class OffermanagementImpl extends AbstractComponentFacade implements Offe
   public void setSideDishDao(SideDishDao sideDishDao) {
 
     this.sideDishDao = sideDishDao;
+  }
+
+  @Override
+  public SpecialEto findSpecial(Long id) {
+
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public PaginatedListTo<SpecialEto> findSpecialEtos(SpecialSearchCriteriaTo criteria) {
+
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public boolean deleteSpecial(Long specialId) {
+
+    // TODO Auto-generated method stub
+    return false;
+  }
+
+  @Override
+  public SpecialEto saveSpecial(SpecialEto special) {
+
+    // TODO Auto-generated method stub
+    return null;
   }
 
 }
